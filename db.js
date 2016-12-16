@@ -9,7 +9,20 @@ function ListAllCharacters (){
 
 }
 
+function getFightPotions (){
+  return knex('fightPotions')
+  .select('*')
+}
+
+function getCharacterProfile(id){
+  return knex('characters')
+    .select('*')
+    .join('fightPotions', 'fightPotions.f_id', '=', 'characters.fightPotions_id')
+    .where('characters.id', id)
+}
 
 module.exports = {
-  ListAllCharacters: ListAllCharacters
+  ListAllCharacters: ListAllCharacters,
+  getFightPotions: getFightPotions,
+  getCharacterProfile: getCharacterProfile
 }
