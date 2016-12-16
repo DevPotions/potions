@@ -1,6 +1,11 @@
-<h1> WE ARE THE WOMBLES </h1>
+<h1> Game of Potions </h1>
+<nav>
+  <a class="link" href="/character/new">Create a character</a> /
+  <a class="link" href="/character/help">Help?</a>
+</nav>
 <ul>
-  {{#each wombles}}
-    <li> <a href="/{{id}}">{{name}} </a></li>
+  {{#each characters}}
+    <li> Hi Master, I am <a href="/{{id}}">{{name}} </a></li>
+    <li>{{description}}</li>
   {{/each}}
 </ul>

@@ -19,10 +19,6 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 
-app.get('/home', routes.getHome)
+app.get('/home', routes.getCharacters)
 
-app.get('/assignments', routes.getAssignments)
-
-app.get('/index/:id', routes.getCharacteristics)
-
-app.get('/index/rubbish',routes.getRubbishList)
+// app.get('/home/profile', routes.getCharacterProfile)
