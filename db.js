@@ -18,6 +18,8 @@ function getCharacterProfile(id){
   return knex('characters')
     .select('*')
     .join('fightPotions', 'characters.fightPotions_id', '=','fightPotions.f_id' )
+    .join('healPotions', 'characters.healPotions_id', '=', 'healPotions.h_id')
+    .join('boostPotions', 'characters.boostPotions_id', '=', 'boostPotions.b_id')
     .where('characters.C_id', id)
 }
 
