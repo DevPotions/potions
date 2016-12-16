@@ -21,6 +21,6 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.get('/home', routes.getCharacters)
 app.get('/home/potions', routes.getFightPotions)
-app.get('/home/profile', routes.getCharacterProfile)
+app.get('/home/:id/profile', routes.getCharacterProfile)
 
 // app.get('/home/profile', routes.getCharacterProfile)

@@ -16,7 +16,12 @@ function getFightPotions (req, res) {
   })
 }
 function getCharacterProfile (req, res){
-  console.log(req.params.id);
+  var charId = Number(req.params.id)
+  db.getCharacterProfile(charId)
+  .then(character => {
+    console.log(character);
+    res.render('profile', character[0])
+  })
 }
 
 module.exports = {

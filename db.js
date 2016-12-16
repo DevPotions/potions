@@ -17,8 +17,8 @@ function getFightPotions (){
 function getCharacterProfile(id){
   return knex('characters')
     .select('*')
-    .join('fightPotions', 'fightPotions.f_id', '=', 'characters.fightPotions_id')
-    .where('characters.id', id)
+    .join('fightPotions', 'characters.fightPotions_id', '=','fightPotions.f_id' )
+    .where('characters.C_id', id)
 }
 
 module.exports = {
